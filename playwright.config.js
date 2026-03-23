@@ -8,6 +8,10 @@ export default defineConfig({
   use: {
     browserName: 'chromium',//browser name can be chromiun, firefox, webkit
     headless: false, //to open the browser in headed mode
+      viewport: null,
+      launchOptions: {
+    args: ['--start-maximized'],
+  },
     trace: 'on-first-retry',
     Timeout: 10000,//global timeout for all test
     EXPECT: {

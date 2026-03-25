@@ -11,15 +11,19 @@ test("end to end testing demo",async ({browser}) => {
     await page.locator("#login").click();
    // await page.getByText("Add To Cart").click();
    await page.waitForLoadState('networkidle');
-   const product = await page.locator(".card-body b").allTextContents();
+   const productsName = await page.locator(".card-body b").allTextContents();
    // const product = await page.locator(".container").allTextContents(); //whole container text it extracted
-   console.log(product);
-   for(let p of product){
-  if(p.includes("ZARA COAT 3")){
-    console.log(p + " is found");
-    break;
-   }
-   else {    console.log("product not found");
-   }
-   
-}});
+   console.log(productsName);
+
+//    const count = await page.locator(".card-body ").count();
+//    console.log(count);
+//    let p="ZARA COAT 3 ";
+//    for(let i=0;i<count;i++){
+//   if(await page.locator(".card-body b").nth(i).textContent()===p){
+//     await page.locator(".card-body button").nth(i).click();
+//     break;
+//    }
+//   //await page.pause();
+//    await page.waitForTimeout(2000); // waits for 2 seconds
+// await page.close();
+});
